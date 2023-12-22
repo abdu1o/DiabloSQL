@@ -20,13 +20,13 @@ FROM Item
 GROUP BY type, price, delivery_date, amount;
 
 DELETE FROM Item
-WHERE amount < 10 AND price > 6666; --вместо 70 грн
+WHERE amount < 10 AND price > 6666; --removal request No.12
 
 DELETE FROM Item
-WHERE type IN ('amulet', 'ring'); --вместо алкогол€ и кондитерских изделий
+WHERE type IN ('amulet', 'ring'); --removal request No.13
 
 DELETE FROM Item
-WHERE DATEDIFF(DAY, delivery_date, GETDATE()) > 3; --дата доставки более 3 дн€ вместо 3 мес€ца от текущей
+WHERE DATEDIFF(DAY, delivery_date, GETDATE()) > 3; --removal request No.16
 
 DELETE FROM Item
-WHERE aspect IS NULL OR gem_slots IS NULL; --если информаци€ об аспекте неизвестна (производителе) или количество слотов NULL (вместо скидки 10%)
+WHERE aspect IS NULL OR gem_slots IS NULL; --removal request No.18
